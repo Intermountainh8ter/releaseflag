@@ -1,6 +1,7 @@
 [package]
 name = "releaseflag"
-version = "0.0.1"
+version = "0.1.0"
+authors = ["Intermountainh8ter"]
 edition = "2021"
 license = "MIT"
 description = "Release-time aggregator across the pre-registered bench suite. Reads upstream verdicts (ChainReport, Verdict, Certification, …) and emits one PASS/HOLD/BLOCK decision."
