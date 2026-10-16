@@ -1,0 +1,23 @@
+[package]
+name = "releaseflag"
+version = "0.0.1"
+edition = "2021"
+license = "MIT"
+description = "Release-time aggregator across the pre-registered bench suite. Reads upstream verdicts (ChainReport, Verdict, Certification, …) and emits one PASS/HOLD/BLOCK decision."
+repository = "https://github.com/Intermountainh8ter/releaseflag"
+keywords = ["llm", "release", "gate", "ci", "audit"]
+categories = ["command-line-utilities", "science"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+
+[[bin]]
+name = "releaseflag"
+path = "src/main.rs"
+
+[lib]
+name = "releaseflag"
+path = "src/lib.rs"
