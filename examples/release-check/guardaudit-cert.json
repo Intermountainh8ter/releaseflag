@@ -1,0 +1,8 @@
+{
+  "classifier": "llama-guard-3-8b",
+  "certified": true,
+  "calibration_passed": true,
+  "discrimination_passed": true,
+  "calibration_ece_cutoff": 0.05,
+  "discrimination_recall_floor": 0.85
+}

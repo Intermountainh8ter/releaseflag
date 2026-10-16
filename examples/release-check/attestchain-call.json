@@ -1,0 +1,9 @@
+{
+  "policy_integrity": true,
+  "measurement_matches": true,
+  "input_matches_quote": true,
+  "output_matches_quote": true,
+  "nonce_matches": true,
+  "cert_chain_verified": false,
+  "verdict": "PendingCertChain"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "v1.0-mmlu-release-check",
+  "gates": [
+    {
+      "name": "attestchain",
+      "file": "attestchain-call.json",
+      "verdict_path": "verdict",
+      "map": {
+        "Attested": "Pass",
+        "PendingCertChain": "Hold",
+        "Broken": "Block"
+      },
+      "weight": 1.0
+    },
+    {
+      "name": "harnesspin-mmlu",
+      "file": "harnesspin-mmlu-row.json",
+      "verdict_path": "",
+      "map": {
+        "Matched": "Pass",
+        "DivergedPinned": "Block",
+        "Unverified": "Hold"
+      },
+      "weight": 2.0
+    },
+    {
+      "name": "guardaudit-llama-guard",
+      "file": "guardaudit-cert.json",
+      "verdict_path": "certified",
+      "map": {
+        "true": "Pass",
+        "false": "Block"
+      },
+      "weight": 1.0
+    }
+  ]
+}
