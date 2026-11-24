@@ -22,3 +22,5 @@ path = "src/main.rs"
 [lib]
 name = "releaseflag"
 path = "src/lib.rs"
+
+[workspace]
