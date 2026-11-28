@@ -18,6 +18,7 @@
 //! removes an incentive to tune the weights until the number flips.
 
 pub mod missing;
+pub mod window;
 
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -31,7 +32,7 @@ pub enum Outcome {
 }
 
 impl Outcome {
-    fn rank(&self) -> u8 {
+    pub(crate) fn rank(&self) -> u8 {
         match self {
             Outcome::Pass => 0,
             Outcome::Hold => 1,

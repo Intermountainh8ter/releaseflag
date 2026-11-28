@@ -1,0 +1,29 @@
+{
+  "provenance": {
+    "command": "releaseflag window-sim --runs 1000 --seed 7 --out results/758-window-sim.json",
+    "data_sources": [
+      {
+        "license": "MIT (in-repo)",
+        "url": "seeded in-process simulation, no external data"
+      }
+    ],
+    "hardware": "cpu",
+    "seeds": [
+      7
+    ],
+    "started_at": "2026-11-28T00:47:32Z",
+    "wall_s": 0.000502975
+  },
+  "window": {
+    "analytic_k1": 0.1426250000000001,
+    "flip_rate_k1": 0.136,
+    "flip_rate_k5": 0.005,
+    "flips_k1": 136,
+    "flips_k5": 5,
+    "gates": 3,
+    "majority": 3,
+    "p_bad": 0.05,
+    "runs": 1000,
+    "window": 5
+  }
+}

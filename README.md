@@ -92,3 +92,12 @@ under three missing-gate policies: error, Hold, Block. On the committed
 of the 6 subsets whose decision changes is 0.5 under Hold, 0.0 under Block and
 1.0 under error (`results/753-missing-sweep.json`,
 `/missing_sweep/policies/*/decision_change_share`).
+
+## window-sim (iter 758)
+
+`releaseflag window-sim --runs 1000 --seed 7 --out results/758-window-sim.json`
+simulates 3 healthy gates with a 0.05 spurious-Block reading probability.
+Result (seed 7, simulated, not real release data): a single reading flipped
+the aggregate to Block in 0.136 of runs (analytic 0.1426250000000001); a
+3-of-5 majority window flipped in 0.005. Source:
+`results/758-window-sim.json`.

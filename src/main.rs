@@ -31,6 +31,15 @@ enum Cmd {
         #[arg(long)]
         out: PathBuf,
     },
+    /// Simulate noisy healthy-gate readings: single reading vs majority window.
+    WindowSim {
+        #[arg(long, default_value_t = 1000)]
+        runs: u32,
+        #[arg(long, default_value_t = 7)]
+        seed: u64,
+        #[arg(long)]
+        out: PathBuf,
+    },
     /// Print the version banner and exit.
     Version,
 }
@@ -77,6 +86,26 @@ fn main() -> anyhow::Result<()> {
                     "hardware": "cpu",
                     "wall_s": started.elapsed().as_secs_f64(),
                     "data_sources": [{"url": "projects/ai/releaseflag/examples/release-check/release-config.json", "license": "MIT (in-repo committed fixtures)"}]
+                }
+            });
+            if let Some(d) = out.parent() {
+                std::fs::create_dir_all(d)?;
+            }
+            std::fs::write(&out, serde_json::to_string_pretty(&doc)? + "\n")?;
+        }
+        Cmd::WindowSim { runs, seed, out } => {
+            let started = std::time::Instant::now();
+            let started_at = chrono_free_now();
+            let rep = releaseflag::window::window_sim(runs, seed, 3, 0.05, 5, 3);
+            let doc = serde_json::json!({
+                "window": rep,
+                "provenance": {
+                    "started_at": started_at,
+                    "seeds": [seed],
+                    "command": format!("releaseflag window-sim --runs {runs} --seed {seed} --out {}", out.display()),
+                    "hardware": "cpu",
+                    "wall_s": started.elapsed().as_secs_f64(),
+                    "data_sources": [{"url": "seeded in-process simulation, no external data", "license": "MIT (in-repo)"}]
                 }
             });
             if let Some(d) = out.parent() {
