@@ -1,0 +1,177 @@
+{
+  "missing_sweep": {
+    "all_present_decision": "Block",
+    "n_subsets": 6,
+    "policies": {
+      "block": {
+        "changed_count": 0,
+        "decision_change_share": 0.0,
+        "subsets": [
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "attestchain"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "attestchain",
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "attestchain",
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "harnesspin-mmlu",
+              "guardaudit-llama-guard"
+            ]
+          }
+        ]
+      },
+      "error": {
+        "changed_count": 6,
+        "decision_change_share": 1.0,
+        "subsets": [
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "attestchain"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "attestchain",
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "attestchain",
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Error",
+            "removed": [
+              "harnesspin-mmlu",
+              "guardaudit-llama-guard"
+            ]
+          }
+        ]
+      },
+      "hold": {
+        "changed_count": 3,
+        "decision_change_share": 0.5,
+        "subsets": [
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "attestchain"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Hold",
+            "removed": [
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Hold",
+            "removed": [
+              "attestchain",
+              "harnesspin-mmlu"
+            ]
+          },
+          {
+            "changed": false,
+            "decision": "Block",
+            "removed": [
+              "attestchain",
+              "guardaudit-llama-guard"
+            ]
+          },
+          {
+            "changed": true,
+            "decision": "Hold",
+            "removed": [
+              "harnesspin-mmlu",
+              "guardaudit-llama-guard"
+            ]
+          }
+        ]
+      }
+    },
+    "release": "v1.0-mmlu-release-check"
+  },
+  "provenance": {
+    "command": "releaseflag missing-sweep --config examples/release-check/release-config.json --out results/753-missing-sweep.json",
+    "data_sources": [
+      {
+        "license": "MIT (in-repo committed fixtures)",
+        "url": "projects/ai/releaseflag/examples/release-check/release-config.json"
+      }
+    ],
+    "hardware": "cpu",
+    "seeds": [
+      0
+    ],
+    "started_at": "2026-11-28T00:28:25Z",
+    "wall_s": 0.000604327
+  }
+}

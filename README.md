@@ -82,3 +82,13 @@ why; CI reads the exit code.
 ## License
 
 MIT.
+
+## missing-sweep
+
+`releaseflag missing-sweep --config <cfg> --out <json>` removes each
+gate's verdict file in turn (and each pair) and records the decision
+under three missing-gate policies: error, Hold, Block. On the committed
+`examples/release-check` config (all-present decision Block), the share
+of the 6 subsets whose decision changes is 0.5 under Hold, 0.0 under Block and
+1.0 under error (`results/753-missing-sweep.json`,
+`/missing_sweep/policies/*/decision_change_share`).

@@ -17,6 +17,8 @@
 //! worst gate decides" matches how real release reviews work and
 //! removes an incentive to tune the weights until the number flips.
 
+pub mod missing;
+
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
